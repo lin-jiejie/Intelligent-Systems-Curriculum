@@ -7,4 +7,6 @@
 void vDelay_us( uint16_t xus );
 void vDelay_ms( uint32_t xms );
 
+#define MY_TIM	(htim9)
+
 #endif

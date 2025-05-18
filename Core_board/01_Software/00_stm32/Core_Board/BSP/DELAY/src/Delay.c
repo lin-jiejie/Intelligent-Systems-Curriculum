@@ -2,19 +2,15 @@
 
 void vDelay_us( uint16_t xus )
 {
-	uint16_t differ = 0xffff-xus-0xff;
-
-	__HAL_TIM_SetCounter( &htim5, differ );
-
-	HAL_TIM_Base_Start( &htim5 );
-
-	while (differ < 0xffff-0xff)
-	{
-		differ = __HAL_TIM_GetCounter( &htim5 );
-	}
-
-	HAL_TIM_Base_Stop( &htim5 );
+	uint16_t now_time = __HAL_TIM_GetCounter( &MY_TIM );
+	
+	HAL_TIM_Base_Start( &MY_TIM );
+	
+	while( (__HAL_TIM_GetCounter(&MY_TIM) - now_time) < xus );
+	
+	HAL_TIM_Base_Stop( &MY_TIM );
 }
+
 
 void vDelay_ms( uint32_t xms )
 {

@@ -47,3 +47,6 @@ core_board\freertos.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdio.h
 core_board\freertos.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\string.h
 core_board\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 core_board\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+core_board\freertos.o: ..\BSP\OLED\inc\oled.h
+core_board\freertos.o: ..\BSP\DELAY\inc\Delay.h
+core_board\freertos.o: ../Core/Inc/tim.h

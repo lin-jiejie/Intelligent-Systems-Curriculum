@@ -45,3 +45,5 @@ core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsi
 core_board\main.o: ../Core/Inc/tim.h
 core_board\main.o: ../Core/Inc/usart.h
 core_board\main.o: ../Core/Inc/gpio.h
+core_board\main.o: ..\BSP\OLED\inc\oled.h
+core_board\main.o: ..\BSP\DELAY\inc\Delay.h

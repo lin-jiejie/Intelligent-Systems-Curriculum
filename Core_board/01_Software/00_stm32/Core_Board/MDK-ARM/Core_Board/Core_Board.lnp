@@ -35,6 +35,8 @@
 "core_board\cmsis_os2.o"
 "core_board\heap_4.o"
 "core_board\port.o"
+"core_board\delay.o"
+"core_board\oled.o"
 "core_board\app_control.o"
 --strict --scatter "Core_Board\Core_Board.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

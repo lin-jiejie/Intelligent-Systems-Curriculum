@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "oled.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,7 +58,7 @@ void MX_FREERTOS_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void Hard_Init();
 /* USER CODE END 0 */
 
 /**
@@ -95,6 +95,8 @@ int main(void)
   MX_USART1_UART_Init();
   MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
+
+
 
   /* USER CODE END 2 */
 
@@ -167,7 +169,11 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void Hard_Init()
+{
+	OLED_Init();
+	OLED_Clear();
+}
 /* USER CODE END 4 */
 
 /**

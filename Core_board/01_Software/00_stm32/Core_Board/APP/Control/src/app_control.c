@@ -85,10 +85,19 @@ void key_read_func(void *argument)
  * */
 void display_sensor_func(void *argument)
 {
+	uint32_t num = 0;
 	for (;;)
 	{
 		HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
-		vTaskDelay(100);
+		
+		taskENTER_CRITICAL();           /* Entering the critical */
+		
+		num++;
+		OLED_ShowNum(1,1,num,2);
+		
+		taskEXIT_CRITICAL();            /* Exit the critical     */
+		
+		vTaskDelay(1000);
 	}
 }
 

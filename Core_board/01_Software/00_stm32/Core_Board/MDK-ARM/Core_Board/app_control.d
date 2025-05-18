@@ -17,6 +17,7 @@ core_board\app_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/lis
 core_board\app_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 core_board\app_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 core_board\app_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+core_board\app_control.o: ..\BSP\OLED\inc\oled.h
 core_board\app_control.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 core_board\app_control.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h
 core_board\app_control.o: ../Drivers/CMSIS/Include/core_cm4.h
@@ -46,3 +47,6 @@ core_board\app_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_
 core_board\app_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 core_board\app_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 core_board\app_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+core_board\app_control.o: ..\BSP\DELAY\inc\Delay.h
+core_board\app_control.o: ../Core/Inc/tim.h
+core_board\app_control.o: ../Core/Inc/main.h
