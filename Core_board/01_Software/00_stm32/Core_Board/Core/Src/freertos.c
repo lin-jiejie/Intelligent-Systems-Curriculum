@@ -55,10 +55,6 @@ const osThreadAttr_t start_Task_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 
-
-
-
-
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
@@ -97,7 +93,7 @@ void MX_FREERTOS_Init(void) {
   /* Create the thread(s) */
   /* creation of start_Task */
   start_TaskHandle = osThreadNew(StartDefaultTask, NULL, &start_Task_attributes);
-	
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */

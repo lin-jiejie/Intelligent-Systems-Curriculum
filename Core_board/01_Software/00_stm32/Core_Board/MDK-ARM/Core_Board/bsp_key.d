@@ -1,5 +1,5 @@
 core_board\bsp_key.o: ..\BSP\KEY\src\bsp_key.c
-core_board\bsp_key.o: ..\BSP\KEY\inc\bsp_key.h
+core_board\bsp_key.o: ../BSP/KEY/inc/bsp_key.h
 core_board\bsp_key.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdint.h
 core_board\bsp_key.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdio.h
 core_board\bsp_key.o: ../Core/Inc/main.h

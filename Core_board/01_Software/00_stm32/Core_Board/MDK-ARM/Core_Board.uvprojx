@@ -314,7 +314,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>4</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F411xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;..\BSP\KEY\inc;..\BSP\DELAY\inc;..\BSP\OLED\inc;..\MID\Third_Party\RTT;..\APP\Control\inc</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../BSP/KEY/inc;../BSP/DELAY/inc;../BSP/OLED/inc;../BSP/STEP_MOTOR/inc;../MID/Third_Party/RTT;../APP/Control/inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1523,9 +1523,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>BSP/UART</GroupName>
-        </Group>
-        <Group>
           <GroupName>BSP/DELAY</GroupName>
           <Files>
             <File>
@@ -1546,12 +1543,35 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>BSP/UART</GroupName>
+        </Group>
+        <Group>
           <GroupName>BSP/OLED</GroupName>
           <Files>
             <File>
               <FileName>OLED.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\OLED\src\OLED.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BSP/STEP_MOTOR</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_step_motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\STEP_MOTOR\src\bsp_step_motor.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>MID/PID</GroupName>
+          <Files>
+            <File>
+              <FileName>mid_pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MID\Private\PID\src\mid_pid.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1569,9 +1589,6 @@
               <FilePath>..\MID\Third_Party\RTT\SEGGER_RTT_printf.c</FilePath>
             </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>MID/PID</GroupName>
         </Group>
         <Group>
           <GroupName>APP/Control</GroupName>

@@ -1,5 +1,5 @@
 core_board\delay.o: ..\BSP\DELAY\src\Delay.c
-core_board\delay.o: ..\BSP\DELAY\inc\Delay.h
+core_board\delay.o: ../BSP/DELAY/inc/Delay.h
 core_board\delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 core_board\delay.o: ../Core/Inc/stm32f4xx_hal_conf.h
 core_board\delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h

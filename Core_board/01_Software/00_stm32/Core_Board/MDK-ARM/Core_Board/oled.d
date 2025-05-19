@@ -1,5 +1,5 @@
 core_board\oled.o: ..\BSP\OLED\src\OLED.c
-core_board\oled.o: ..\BSP\OLED\inc\OLED.h
+core_board\oled.o: ../BSP/OLED/inc/OLED.h
 core_board\oled.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 core_board\oled.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h
 core_board\oled.o: ../Drivers/CMSIS/Include/core_cm4.h
@@ -31,7 +31,7 @@ core_board\oled.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 core_board\oled.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 core_board\oled.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 core_board\oled.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-core_board\oled.o: ..\BSP\DELAY\inc\Delay.h
+core_board\oled.o: ../BSP/DELAY/inc/Delay.h
 core_board\oled.o: ../Core/Inc/tim.h
 core_board\oled.o: ../Core/Inc/main.h
-core_board\oled.o: ..\BSP\OLED\inc\oledfont.h
+core_board\oled.o: ../BSP/OLED/inc/oledfont.h

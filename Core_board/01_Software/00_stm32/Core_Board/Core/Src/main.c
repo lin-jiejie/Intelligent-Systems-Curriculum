@@ -28,6 +28,7 @@
 #include <stdio.h>
 
 #include "oled.h"
+#include "bsp_step_motor.h"
 
 #include "SEGGER_RTT.h"
 /* USER CODE END Includes */
@@ -61,6 +62,9 @@ PUTCHAR_PROTOTYPE
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+
+step_motor_t* g_step_motor_x_inst = NULL;
+step_motor_t* g_step_motor_y_inst = NULL;
 
 /* USER CODE END PV */
 
@@ -110,7 +114,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
-	
+	Hard_Init();
 
   /* USER CODE END 2 */
 
@@ -129,6 +133,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+	 	  
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -187,6 +193,23 @@ void Hard_Init()
 {
 	OLED_Init();
 	OLED_Clear();
+	
+	g_step_motor_x_inst = creat_step_motor(            0, 
+										             &htim5, 
+										      TIM_CHANNEL_1, 
+										   X_DIR_GPIO_Port, 
+										         X_DIR_Pin,
+														  1);
+	g_step_motor_y_inst = creat_step_motor(            0, 
+										             &htim4, 
+										      TIM_CHANNEL_1, 
+										   Y_DIR_GPIO_Port, 
+										         Y_DIR_Pin,
+														  1);
+	step_motor_run(g_step_motor_x_inst);
+	step_motor_run(g_step_motor_y_inst);
+
+	
 }
 /* USER CODE END 4 */
 
