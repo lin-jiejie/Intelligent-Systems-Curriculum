@@ -125,7 +125,7 @@ int main(void)
   MX_FREERTOS_Init();
 
   /* Start scheduler */
-  osKernelStart();
+//  osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
 
@@ -133,8 +133,14 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-	 	  
+	  
+	/* bsp_step_motor unit test */
+//	vDelay_ms(1000);
+//	set_step_speed(g_step_motor_x_inst, g_step_motor_x_inst->motor_speed*(-1));
+//	set_step_speed(g_step_motor_y_inst, g_step_motor_y_inst->motor_speed*(-1));
+//	step_motor_run(g_step_motor_x_inst);
+//	step_motor_run(g_step_motor_y_inst);
+	  
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -194,18 +200,18 @@ void Hard_Init()
 	OLED_Init();
 	OLED_Clear();
 	
-	g_step_motor_x_inst = creat_step_motor(            0, 
-										             &htim5, 
-										      TIM_CHANNEL_1, 
-										   X_DIR_GPIO_Port, 
-										         X_DIR_Pin,
-														  1);
-	g_step_motor_y_inst = creat_step_motor(            0, 
-										             &htim4, 
-										      TIM_CHANNEL_1, 
-										   Y_DIR_GPIO_Port, 
-										         Y_DIR_Pin,
-														  1);
+	g_step_motor_x_inst = creat_step_motor(                   -10, 
+										                 &htim5, 
+										          TIM_CHANNEL_1, 
+										        X_DIR_GPIO_Port, 
+										              X_DIR_Pin,
+					                       STEP_MOTOR_DIR_RESET);
+	g_step_motor_y_inst = creat_step_motor(                   -10, 
+										                 &htim4, 
+										          TIM_CHANNEL_1, 
+										        Y_DIR_GPIO_Port, 
+										              Y_DIR_Pin,
+										   STEP_MOTOR_DIR_RESET);
 	step_motor_run(g_step_motor_x_inst);
 	step_motor_run(g_step_motor_y_inst);
 

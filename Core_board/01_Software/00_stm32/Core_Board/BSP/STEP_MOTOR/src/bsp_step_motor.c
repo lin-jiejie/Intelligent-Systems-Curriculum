@@ -56,7 +56,7 @@ step_motor_t* creat_step_motor(int32_t              speed,
 							   uint32_t           Channel,
                                GPIO_TypeDef*  p_Dir_GPIOx, 
                                uint16_t      Dir_GPIO_Pin,
-							   uint16_t               dir)
+							   step_motor_dir_t       dir)
 {
     if (NULL == p_Dir_GPIOx)
 	{
@@ -112,14 +112,14 @@ void step_motor_run(step_motor_t* motor_inst)
 	/******* set motor direction *******/
 	if(motor_inst->motor_speed <= 0)
 	{
-		if(motor_inst->dir == 0)
+		if(motor_inst->dir == STEP_MOTOR_DIR_RESET)
 			HAL_GPIO_WritePin(motor_inst->p_Dir_GPIOx, motor_inst->Dir_GPIO_Pin, GPIO_PIN_SET);
 		else
 			HAL_GPIO_WritePin(motor_inst->p_Dir_GPIOx, motor_inst->Dir_GPIO_Pin, GPIO_PIN_RESET);
 	}
 	else 
 	{
-		if(motor_inst->dir == 0)
+		if(motor_inst->dir == STEP_MOTOR_DIR_RESET)
 			HAL_GPIO_WritePin(motor_inst->p_Dir_GPIOx, motor_inst->Dir_GPIO_Pin, GPIO_PIN_RESET);
 		else
 			HAL_GPIO_WritePin(motor_inst->p_Dir_GPIOx, motor_inst->Dir_GPIO_Pin, GPIO_PIN_SET);
