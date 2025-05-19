@@ -1,0 +1,47 @@
+core_board\bsp_key.o: ..\BSP\KEY\src\bsp_key.c
+core_board\bsp_key.o: ..\BSP\KEY\inc\bsp_key.h
+core_board\bsp_key.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdint.h
+core_board\bsp_key.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdio.h
+core_board\bsp_key.o: ../Core/Inc/main.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+core_board\bsp_key.o: ../Core/Inc/stm32f4xx_hal_conf.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
+core_board\bsp_key.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+core_board\bsp_key.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h
+core_board\bsp_key.o: ../Drivers/CMSIS/Include/core_cm4.h
+core_board\bsp_key.o: ../Drivers/CMSIS/Include/cmsis_version.h
+core_board\bsp_key.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+core_board\bsp_key.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+core_board\bsp_key.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+core_board\bsp_key.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+core_board\bsp_key.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stddef.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+core_board\bsp_key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+core_board\bsp_key.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
+core_board\bsp_key.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+core_board\bsp_key.o: ../Core/Inc/FreeRTOSConfig.h
+core_board\bsp_key.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+core_board\bsp_key.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+core_board\bsp_key.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+core_board\bsp_key.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+core_board\bsp_key.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+core_board\bsp_key.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+core_board\bsp_key.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+core_board\bsp_key.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+core_board\bsp_key.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h

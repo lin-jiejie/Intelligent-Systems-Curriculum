@@ -38,6 +38,7 @@
 #include "semphr.h"
 
 #include "oled.h"
+#include "bsp_key.h"
 //******************************** Includes *********************************//
 
 

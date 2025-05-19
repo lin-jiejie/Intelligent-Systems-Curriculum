@@ -50,3 +50,4 @@ core_board\app_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart
 core_board\app_control.o: ..\BSP\DELAY\inc\Delay.h
 core_board\app_control.o: ../Core/Inc/tim.h
 core_board\app_control.o: ../Core/Inc/main.h
+core_board\app_control.o: ..\BSP\KEY\inc\bsp_key.h

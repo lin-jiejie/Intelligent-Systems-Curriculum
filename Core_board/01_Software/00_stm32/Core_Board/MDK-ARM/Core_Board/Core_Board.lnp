@@ -36,9 +36,12 @@
 "core_board\heap_4.o"
 "core_board\port.o"
 "core_board\delay.o"
+"core_board\bsp_key.o"
 "core_board\oled.o"
+"core_board\segger_rtt.o"
+"core_board\segger_rtt_printf.o"
 "core_board\app_control.o"
---strict --scatter "Core_Board\Core_Board.sct"
+--library_type=microlib --strict --scatter "Core_Board\Core_Board.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "Core_Board.map" -o Core_Board\Core_Board.axf

@@ -50,3 +50,4 @@ core_board\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr
 core_board\freertos.o: ..\BSP\OLED\inc\oled.h
 core_board\freertos.o: ..\BSP\DELAY\inc\Delay.h
 core_board\freertos.o: ../Core/Inc/tim.h
+core_board\freertos.o: ..\BSP\KEY\inc\bsp_key.h

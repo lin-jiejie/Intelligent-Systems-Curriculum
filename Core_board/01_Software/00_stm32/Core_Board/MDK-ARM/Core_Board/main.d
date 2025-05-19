@@ -45,5 +45,10 @@ core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsi
 core_board\main.o: ../Core/Inc/tim.h
 core_board\main.o: ../Core/Inc/usart.h
 core_board\main.o: ../Core/Inc/gpio.h
+core_board\main.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdio.h
 core_board\main.o: ..\BSP\OLED\inc\oled.h
 core_board\main.o: ..\BSP\DELAY\inc\Delay.h
+core_board\main.o: ..\MID\Third_Party\RTT\SEGGER_RTT.h
+core_board\main.o: ..\MID\Third_Party\RTT\SEGGER_RTT_Conf.h
+core_board\main.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdlib.h
+core_board\main.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdarg.h

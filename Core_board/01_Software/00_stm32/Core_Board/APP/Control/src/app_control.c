@@ -28,13 +28,7 @@
 #define USER_LED_Pin GPIO_PIN_13
 #define USER_LED_GPIO_Port GPIOC
 
-/* Definitions for Key_Read_Task */
-osThreadId_t Key_Read_Handle;
-const osThreadAttr_t Task_Key_Read_attributes = {
-  .name = "Key_Read_Task",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityBelowNormal,
-};
+
 
 /* Definitions for Display_Task */
 osThreadId_t Sensor_DisplayHandle;
@@ -52,25 +46,6 @@ const osThreadAttr_t Task_Motor_Control_attributes = {
   .priority = (osPriority_t) osPriorityRealtime,
 };
 
-
-/**
- * @brief key_read_func for thread to run.
- * 
- * Steps:
- *    Read the key value
- *  
- * @param[in] argument      : the thread argument.
- * 
- * @return  : void
- * 
- * */
-void key_read_func(void *argument)
-{
-	for (;;)
-	{
-		vTaskDelay(1);
-	}
-}
 
 /**
  * @brief display_sensor_func for thread to run.
