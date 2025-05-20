@@ -31,7 +31,14 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
 
+#include "oled.h"
+#include "bsp_step_motor.h"
+
+#include "SEGGER_RTT.h"
+#include "mid_pid.h"
+#include "bsp_uart.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -77,7 +84,8 @@ void Error_Handler(void);
 #define Y_DIR_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-
+#define TARGET_CENTER_X		(133)
+#define TARGET_CENTER_Y		(155)
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

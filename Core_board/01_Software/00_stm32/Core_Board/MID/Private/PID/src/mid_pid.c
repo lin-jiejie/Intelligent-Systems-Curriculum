@@ -37,13 +37,13 @@
  * 
  * @return pid_controller_t* : The created PID controller object pointer
  */
-pid_controller_t* creat_pid_controller(float             Kp,
-                                       float             Ki,
-                                       float             Kd,
-                                       float integral_limit,
-                                       float   output_limit,
-                                       float   integral_sum,
-                                       float     prev_error)
+pid_controller_t* creat_pid_controller(int32_t             Kp,
+                                       int32_t             Ki,
+                                       int32_t             Kd,
+                                       int32_t integral_limit,
+                                       int32_t   output_limit,
+                                       int32_t   integral_sum,
+                                       int32_t     prev_error) 
 {
     if (integral_limit < 0 || output_limit < 0) {
 #ifdef DEBUG
@@ -84,7 +84,7 @@ pid_controller_t* creat_pid_controller(float             Kp,
  * 
  * @return    float             : the pid's output
  * */
-float pid_compute(pid_controller_t* pid_inst, int32_t error) 
+int32_t pid_compute(pid_controller_t* pid_inst, int32_t error) 
 {
     /* Calculation of integral sum */
     pid_inst->integral_sum += error;
@@ -112,15 +112,15 @@ float pid_compute(pid_controller_t* pid_inst, int32_t error)
     {
         output = pid_inst->output_limit;
     } 
-    else if (output < -pid_inst->output_limit) 
+    else if ( output < (-1*pid_inst->output_limit) ) 
     {
-        output = -pid_inst->output_limit;
+        output = (-1*pid_inst->output_limit);
     }
 
     /* Updating state variables */
-    pid_inst->prev_error = error;
+    pid_inst->prev_error = (float)error;
 
-    return output;
+    return (int32_t)output;
 }
 
 

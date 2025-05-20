@@ -28,13 +28,16 @@
 #define USER_LED_Pin GPIO_PIN_13
 #define USER_LED_GPIO_Port GPIOC
 
-
+extern step_motor_t* g_step_motor_x_inst;
+extern step_motor_t* g_step_motor_y_inst;
+extern pid_controller_t* g_x_pid_controller;
+extern pid_controller_t* g_y_pid_controller;
 
 /* Definitions for Display_Task */
 osThreadId_t Sensor_DisplayHandle;
 const osThreadAttr_t Task_Display_attributes = {
   .name = "Display_Task",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 
@@ -42,8 +45,8 @@ const osThreadAttr_t Task_Display_attributes = {
 osThreadId_t Motor_Control_Handle;
 const osThreadAttr_t Task_Motor_Control_attributes = {
   .name = "Motor_Control_Task",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityRealtime,
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
 };
 
 
@@ -60,19 +63,22 @@ const osThreadAttr_t Task_Motor_Control_attributes = {
  * */
 void display_sensor_func(void *argument)
 {
-	uint32_t num = 0;
 	for (;;)
 	{
 		HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
 		
-		taskENTER_CRITICAL();           /* Entering the critical */
+//		taskENTER_CRITICAL();           /* Entering the critical */
+//		
+//		OLED_ShowString(1,1,"X:");
+//		OLED_ShowSignedNum(1,4,target_location.x_axis_location - TARGET_CENTER_X,3);
+//		OLED_ShowString(2,1,"Y:");
+//		OLED_ShowSignedNum(2,4,target_location.y_axis_location - TARGET_CENTER_Y,3);
+//		OLED_ShowNum(4,1,num,2);
+//		num++;
+//		
+//		taskEXIT_CRITICAL();            /* Exit the critical     */
 		
-		num++;
-		OLED_ShowNum(1,1,num,2);
-		
-		taskEXIT_CRITICAL();            /* Exit the critical     */
-		
-		vTaskDelay(1000);
+		vTaskDelay(100);
 	}
 }
 
@@ -91,6 +97,36 @@ void motor_control_func(void *argument)
 {
 	for (;;)
 	{
-		vTaskDelay(1);
+//		portTASK_USES_FLOATING_POINT();
+		
+		printf("now on the motor_control_func\n");
+		
+		__disable_irq();
+		taskENTER_CRITICAL();           /* Entering the critical */
+		
+		if( (target_location.x_axis_location <= 240) && (target_location.y_axis_location <= 240))
+		{
+			set_step_speed(             g_step_motor_x_inst, 
+					       pid_compute(g_x_pid_controller, 
+	    (int32_t)target_location.x_axis_location - TARGET_CENTER_X)
+			                                              );
+			set_step_speed(             g_step_motor_y_inst, 
+					       pid_compute(g_y_pid_controller, 
+	    (int32_t)target_location.y_axis_location - TARGET_CENTER_Y)
+			                                              );
+		}
+		else
+		{
+			set_step_speed(g_step_motor_x_inst, 0);
+			set_step_speed(g_step_motor_y_inst, 0);
+		}
+		
+		step_motor_run(g_step_motor_x_inst);
+		step_motor_run(g_step_motor_y_inst);
+		
+		taskEXIT_CRITICAL();            /* Exit the critical     */
+		__enable_irq();
+			
+		vTaskDelay(10);
 	}
 }

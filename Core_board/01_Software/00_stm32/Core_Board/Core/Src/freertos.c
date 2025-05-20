@@ -131,15 +131,15 @@ void StartDefaultTask(void *argument)
                                                          NULL,
 							       &Task_Key_Read_attributes);
 	
-	Motor_Control_Handle   =   osThreadNew(motor_control_func,
-                                                         NULL,
-							  &Task_Motor_Control_attributes);
+//	Motor_Control_Handle   =   osThreadNew(motor_control_func,
+//                                                         NULL,
+//							  &Task_Motor_Control_attributes);
 	
 	Uart_produce_TaskHandle = osThreadNew(Uart_produce_func, 
-																									   NULL, 
+													   NULL, 
 	                          &Uart_produce_Task_attributes);
 	Uart_consume_TaskHandle = osThreadNew(Uart_consume_func, 
-																									   NULL, 
+												       NULL, 
 	                          &Uart_consume_Task_attributes);
 	
 	/********** delete start task *****************/

@@ -31,6 +31,18 @@ core_board\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 core_board\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 core_board\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 core_board\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+core_board\main.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdio.h
+core_board\main.o: ../BSP/OLED/inc/oled.h
+core_board\main.o: ../BSP/DELAY/inc/Delay.h
+core_board\main.o: ../Core/Inc/tim.h
+core_board\main.o: ../Core/Inc/main.h
+core_board\main.o: ../BSP/STEP_MOTOR/inc/bsp_step_motor.h
+core_board\main.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdlib.h
+core_board\main.o: ../MID/Third_Party/RTT/SEGGER_RTT.h
+core_board\main.o: ../MID/Third_Party/RTT/SEGGER_RTT_Conf.h
+core_board\main.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdarg.h
+core_board\main.o: ../MID/Private/PID/inc/mid_pid.h
+core_board\main.o: ../BSP/UART/inc/bsp_uart.h
 core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 core_board\main.o: ../Core/Inc/FreeRTOSConfig.h
@@ -42,15 +54,8 @@ core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappe
 core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-core_board\main.o: ../Core/Inc/dma.h
-core_board\main.o: ../Core/Inc/tim.h
+core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 core_board\main.o: ../Core/Inc/usart.h
+core_board\main.o: ../Core/Inc/dma.h
 core_board\main.o: ../Core/Inc/gpio.h
-core_board\main.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdio.h
-core_board\main.o: ../BSP/OLED/inc/oled.h
-core_board\main.o: ../BSP/DELAY/inc/Delay.h
-core_board\main.o: ../BSP/STEP_MOTOR/inc/bsp_step_motor.h
-core_board\main.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdlib.h
-core_board\main.o: ../MID/Third_Party/RTT/SEGGER_RTT.h
-core_board\main.o: ../MID/Third_Party/RTT/SEGGER_RTT_Conf.h
-core_board\main.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdarg.h

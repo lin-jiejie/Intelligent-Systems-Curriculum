@@ -26,12 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <stdio.h>
 
-#include "oled.h"
-#include "bsp_step_motor.h"
-
-#include "SEGGER_RTT.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -64,8 +59,12 @@ PUTCHAR_PROTOTYPE
 
 /* USER CODE BEGIN PV */
 
-step_motor_t* g_step_motor_x_inst = NULL;
-step_motor_t* g_step_motor_y_inst = NULL;
+step_motor_t* g_step_motor_x_inst    = NULL;
+step_motor_t* g_step_motor_y_inst    = NULL;
+pid_controller_t* g_x_pid_controller = NULL;
+pid_controller_t* g_y_pid_controller = NULL;
+
+uint32_t num;
 
 /* USER CODE END PV */
 
@@ -115,6 +114,7 @@ int main(void)
   MX_TIM5_Init();
   MX_USART1_UART_Init();
   MX_TIM9_Init();
+  MX_TIM11_Init();
   /* USER CODE BEGIN 2 */
 	Hard_Init();
 
@@ -135,14 +135,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  
-	/* bsp_step_motor unit test */
-//	vDelay_ms(1000);
-//	set_step_speed(g_step_motor_x_inst, g_step_motor_x_inst->motor_speed*(-1));
-//	set_step_speed(g_step_motor_y_inst, g_step_motor_y_inst->motor_speed*(-1));
-//	step_motor_run(g_step_motor_x_inst);
-//	step_motor_run(g_step_motor_y_inst);
-	  
+//	  num++;
+//	  
+//	  set_step_speed(g_step_motor_x_inst, num);
+//	  step_motor_run(g_step_motor_x_inst);
+//	  
+//	  vDelay_ms(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -202,22 +200,27 @@ void Hard_Init()
 	OLED_Init();
 	OLED_Clear();
 	
-	g_step_motor_x_inst = creat_step_motor(                   -10, 
+	g_x_pid_controller = creat_pid_controller(1, 0, 0, 500, 500, 0, 0);
+	g_y_pid_controller = creat_pid_controller(1, 0, 0, 300, 300, 0, 0);
+	
+	g_step_motor_x_inst = creat_step_motor(                  0, 
 										                 &htim5, 
 										          TIM_CHANNEL_1, 
 										        X_DIR_GPIO_Port, 
 										              X_DIR_Pin,
 					                       STEP_MOTOR_DIR_RESET);
-	g_step_motor_y_inst = creat_step_motor(                   -10, 
+	g_step_motor_y_inst = creat_step_motor(                  0, 
 										                 &htim4, 
 										          TIM_CHANNEL_1, 
 										        Y_DIR_GPIO_Port, 
 										              Y_DIR_Pin,
 										   STEP_MOTOR_DIR_RESET);
+	
 	step_motor_run(g_step_motor_x_inst);
 	step_motor_run(g_step_motor_y_inst);
-
 	
+	
+	HAL_TIM_Base_Start_IT(&htim11);
 }
 /* USER CODE END 4 */
 
@@ -238,6 +241,30 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
+  if (htim->Instance == TIM11)
+  {
+	if( (target_location.x_axis_location <= 240) && (target_location.y_axis_location <= 240))
+	{
+		set_step_speed(             g_step_motor_x_inst, 
+					   pid_compute(g_x_pid_controller, 
+	(int32_t)target_location.x_axis_location - TARGET_CENTER_X)
+													  );
+		set_step_speed(             g_step_motor_y_inst, 
+					   pid_compute(g_y_pid_controller, 
+	(int32_t)target_location.y_axis_location - TARGET_CENTER_Y)
+													  );
+	}
+	else
+	{
+		set_step_speed(g_step_motor_x_inst, 0);
+		set_step_speed(g_step_motor_y_inst, 0);
+	}
+	
+	num++;  
+//	set_step_speed(g_step_motor_x_inst, num);  
+	step_motor_run(g_step_motor_x_inst);
+	step_motor_run(g_step_motor_y_inst);
+  }
 
   /* USER CODE END Callback 1 */
 }

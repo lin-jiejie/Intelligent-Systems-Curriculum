@@ -1,5 +1,5 @@
 core_board\bsp_uart.o: ..\BSP\UART\src\bsp_uart.c
-core_board\bsp_uart.o: ..\BSP\UART\inc\bsp_uart.h
+core_board\bsp_uart.o: ../BSP/UART/inc/bsp_uart.h
 core_board\bsp_uart.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdio.h
 core_board\bsp_uart.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdint.h
 core_board\bsp_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
@@ -47,6 +47,16 @@ core_board\bsp_uart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.
 core_board\bsp_uart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 core_board\bsp_uart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 core_board\bsp_uart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-core_board\bsp_uart.o: ..\MID\Private\MID_circular_buffer\inc\mid_circular_buffer.h
+core_board\bsp_uart.o: ../BSP/OLED/inc/oled.h
+core_board\bsp_uart.o: ../BSP/DELAY/inc/Delay.h
+core_board\bsp_uart.o: ../Core/Inc/tim.h
+core_board\bsp_uart.o: ../Core/Inc/main.h
+core_board\bsp_uart.o: ../BSP/STEP_MOTOR/inc/bsp_step_motor.h
 core_board\bsp_uart.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdlib.h
+core_board\bsp_uart.o: ../MID/Third_Party/RTT/SEGGER_RTT.h
+core_board\bsp_uart.o: ../MID/Third_Party/RTT/SEGGER_RTT_Conf.h
+core_board\bsp_uart.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\stdarg.h
+core_board\bsp_uart.o: ../MID/Private/PID/inc/mid_pid.h
+core_board\bsp_uart.o: ../BSP/UART/inc/bsp_uart.h
+core_board\bsp_uart.o: ../MID/Private/MID_circular_buffer/inc/mid_circular_buffer.h
 core_board\bsp_uart.o: E:\Software\keil 5\ARM\ARMCC\Bin\..\include\string.h

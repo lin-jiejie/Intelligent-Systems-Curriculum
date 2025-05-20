@@ -54,7 +54,7 @@
 #define X_DIR_Pin GPIO_PIN_1
 #define X_DIR_GPIO_Port GPIOA
 
-//#define DEBUG
+
 #define CLK_FRE		(10000UL)
 
 typedef enum{

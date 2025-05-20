@@ -37,12 +37,22 @@
 #include "queue.h"
 #include "semphr.h"
 
-#include "oled.h"
 #include "bsp_key.h"
+#include "bsp_uart.h"
+#include "bsp_step_motor.h"
+#include "oled.h"
+
+#include "mid_pid.h"
+
+#include "main.h"
+
 //******************************** Includes *********************************//
 
 
 //******************************** Defines **********************************//
+
+#define TARGET_CENTER_X		(133)
+#define TARGET_CENTER_Y		(155)
 
 //*********************Thread_Func **********************//
 extern osThreadId_t Sensor_DisplayHandle;

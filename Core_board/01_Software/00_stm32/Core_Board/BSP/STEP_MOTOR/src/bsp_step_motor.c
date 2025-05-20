@@ -108,6 +108,9 @@ void step_motor_run(step_motor_t* motor_inst)
 #endif
         return ;
     }
+	
+
+	printf("now speed = [%d]\n", motor_inst->motor_speed);
 
 	/******* set motor direction *******/
 	if(motor_inst->motor_speed <= 0)
@@ -127,12 +130,13 @@ void step_motor_run(step_motor_t* motor_inst)
 	
 	/******* set motor speed (set tim auto_reload) *******/
 	int32_t abs_speed = abs(motor_inst->motor_speed);
-	if( abs_speed < 5)
+	if( abs_speed < 10)
 	{
 		HAL_TIM_PWM_Stop(motor_inst->p_tim, motor_inst->Channel);
 	}
 	else
 	{	
+		HAL_TIM_PWM_Stop(motor_inst->p_tim, motor_inst->Channel);
 		__HAL_TIM_SET_AUTORELOAD(                  motor_inst->p_tim,
 			                     ( (CLK_FRE / abs_speed) << 1 ) - 1 );
 		__HAL_TIM_SET_COMPARE(    motor_inst->p_tim,

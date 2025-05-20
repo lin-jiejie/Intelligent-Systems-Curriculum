@@ -44,14 +44,15 @@
 //******************************** Includes *********************************//
 
 //******************************** Defines **********************************//
-#define DEBUG
+//#define DEBUG
+
 //#define AB_BUFFER
 //#define CIRCULAR_BUFFER
 #define IDLE_DMA
 
 #define UART_BUFF_SIZE 1
 
-#define BUFFER_FULL 0xff
+#define BUFFER_FULL 0xff	
 #define BUFFER_EMPTY 0x0f
 
 

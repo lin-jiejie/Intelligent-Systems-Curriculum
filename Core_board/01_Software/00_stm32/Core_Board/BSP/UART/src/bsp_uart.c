@@ -39,7 +39,7 @@ osThreadId_t Uart_produce_TaskHandle;
 const osThreadAttr_t Uart_produce_Task_attributes = {
     .name = "Uart_produce_Task",
     .stack_size = 512 * 4,
-    .priority = ( osPriority_t ) osPriorityHigh,
+    .priority = ( osPriority_t ) osPriorityRealtime,
 };
 
 osThreadId_t Uart_consume_TaskHandle;
@@ -239,6 +239,9 @@ void Uart_produce_func( void *argument )
     /************* loop ************************/
     for (;;)
     {
+	#ifdef DEBUG		
+        printf( "now on the Uart_produce_func\r\n" );
+#endif // DEBUG	
         /*******Wait the uart irq notify */
         xTaskNotifyWait( 0, 0, NULL, portMAX_DELAY );
         /* When receive notify form isr ,start the consume thread */
@@ -349,7 +352,9 @@ void Uart_consume_func( void *argument )
     /************* loop ************************/
     for (;;)
     {
+#ifdef DEBUG		
         printf( "now on the Uart_consume_func\r\n" );
+#endif // DEBUG		
         if (NULL == g_uart_mutex)
         {
             continue;

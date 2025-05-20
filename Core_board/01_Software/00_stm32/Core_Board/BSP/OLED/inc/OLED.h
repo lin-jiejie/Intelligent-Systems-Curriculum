@@ -30,8 +30,8 @@
 #include "Delay.h"
 
 
-#ifndef __OLED_H
-#define __OLED_H
+#ifndef __OLED_H__
+#define __OLED_H__
 
 void OLED_Init( void );
 void OLED_Clear( void );
