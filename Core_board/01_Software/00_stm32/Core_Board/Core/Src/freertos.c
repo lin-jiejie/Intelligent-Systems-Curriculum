@@ -25,6 +25,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "stdio.h"
+
+#include "bsp_uart.h"
+
+#include "SEGGER_RTT.h"
+
 #include "app_control.h"
 /* USER CODE END Includes */
 
@@ -120,12 +126,21 @@ void StartDefaultTask(void *argument)
 	Sensor_DisplayHandle   =  osThreadNew(display_sensor_func,
                                                          NULL,
 							        &Task_Display_attributes);
+	
 	Key_Read_Handle        =        osThreadNew(key_read_func,
                                                          NULL,
 							       &Task_Key_Read_attributes);
+	
 	Motor_Control_Handle   =   osThreadNew(motor_control_func,
                                                          NULL,
 							  &Task_Motor_Control_attributes);
+	
+	Uart_produce_TaskHandle = osThreadNew(Uart_produce_func, 
+																									   NULL, 
+	                          &Uart_produce_Task_attributes);
+	Uart_consume_TaskHandle = osThreadNew(Uart_consume_func, 
+																									   NULL, 
+	                          &Uart_consume_Task_attributes);
 	
 	/********** delete start task *****************/
 	vTaskDelete(NULL);// detele self

@@ -54,6 +54,7 @@
 #define BUFFER_FULL 0xff
 #define BUFFER_EMPTY 0x0f
 
+
 //*********************Thread_Func **********************//
 extern osThreadId_t Uart_produce_TaskHandle;
 extern const osThreadAttr_t Uart_produce_Task_attributes;
@@ -69,10 +70,17 @@ typedef enum
 
 typedef enum
 {
-    FRAME_HEAD = 0xff,
-    FRAME_TAIL = 0xef
+    FRAME_HEAD = 0xaa,
+    FRAME_TAIL = 0xdd
 } uart_frame_t;
 
+typedef struct 
+{
+	uint8_t x_axis_location;
+	uint8_t y_axis_location;
+}target_location_t; 
+
+extern target_location_t target_location;
 //*********************Thread_Func **********************//
 
 //*********************Queue_Handler ********************//

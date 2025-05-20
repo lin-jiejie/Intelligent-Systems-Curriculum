@@ -1,0 +1,73 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.15 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.15">
+  <diagram name="第 1 页" id="9HLOcvB9evzoAAZ9LyD9">
+    <mxGraphModel dx="1434" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="04jvUJX2hOzRd0S2ro9y-1" target="04jvUJX2hOzRd0S2ro9y-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-1" value="上电" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="04jvUJX2hOzRd0S2ro9y-2" target="04jvUJX2hOzRd0S2ro9y-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="04jvUJX2hOzRd0S2ro9y-2" target="04jvUJX2hOzRd0S2ro9y-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-2" value="按键按下" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="110" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="04jvUJX2hOzRd0S2ro9y-3" target="04jvUJX2hOzRd0S2ro9y-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-3" value="摄像头寻找标靶&lt;br&gt;串口发送数据(USART1)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="04jvUJX2hOzRd0S2ro9y-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-11" value="有效" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="04jvUJX2hOzRd0S2ro9y-10">
+          <mxGeometry x="-0.1176" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="04jvUJX2hOzRd0S2ro9y-4" target="04jvUJX2hOzRd0S2ro9y-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-13" value="无效" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="04jvUJX2hOzRd0S2ro9y-12">
+          <mxGeometry x="-0.1212" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-4" value="数据有/无效" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="440" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-6" value="电机锁死，等待标靶出现在摄像头可视范围内" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="04jvUJX2hOzRd0S2ro9y-14" target="04jvUJX2hOzRd0S2ro9y-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-14" value="STM32解析串口数据" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="04jvUJX2hOzRd0S2ro9y-18" target="04jvUJX2hOzRd0S2ro9y-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-18" value="量化并进行PID计算&lt;br&gt;(当数据小到误差范围内PID输出为0)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-19" value="根据PID的输出&lt;br&gt;控制电机速度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="04jvUJX2hOzRd0S2ro9y-21" value="OLED显示当前系统状态" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

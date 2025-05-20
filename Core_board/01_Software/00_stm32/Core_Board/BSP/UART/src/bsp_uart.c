@@ -72,6 +72,11 @@ static circular_buffer_t *g_circular_buffer_irq_thread = NULL;
 #ifdef IDLE_DMA
 static circular_buffer_t *g_circular_buffer_irq_thread = NULL;
 #endif // end of IDLE_DMA
+
+target_location_t target_location = {
+	.x_axis_location = 0xff,
+	.y_axis_location = 0xff,
+};
 //********************* global var **********************//
 
 /**
@@ -371,7 +376,7 @@ void Uart_consume_func( void *argument )
                 g_frame_state = FRAME_WAIT_STATE;
                 for (uint32_t i = 0; i <= g_data_count - 2; i++)
                 {
-                    g_crc_sum += g_data_buff[i];
+                    g_crc_sum += g_data_buff[i];	
                 }
                 if (g_crc_sum != g_data_buff[g_data_count - 1])
                 {
@@ -379,8 +384,15 @@ void Uart_consume_func( void *argument )
                     printf( "The crc sum is faild\r\n" );
 #endif // DEBUG
                 }
+				else
+				{
+					target_location.x_axis_location = g_data_buff[g_data_count - 3];
+					target_location.y_axis_location = g_data_buff[g_data_count - 2];
+				}
 #ifdef DEBUG
                 printf( "The crc sum is [%x]\r\n", g_crc_sum );
+				printf( "The x_axis_location is [%x]\r\n", target_location.x_axis_location );
+				printf( "The y_axis_location is [%x]\r\n", target_location.y_axis_location );
 #endif // DEBUG
 #ifdef DEBUG
                 printf( "enter FRAME_WAIT_STATE\r\n" );

@@ -42,6 +42,7 @@ core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappe
 core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 core_board\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+core_board\main.o: ../Core/Inc/dma.h
 core_board\main.o: ../Core/Inc/tim.h
 core_board\main.o: ../Core/Inc/usart.h
 core_board\main.o: ../Core/Inc/gpio.h
